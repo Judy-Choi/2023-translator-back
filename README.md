@@ -30,3 +30,22 @@ Supported by **NIA (National Information Society Agency, 한국지능정보사�
 - Architecture with FastAPI
 - Model serving
 
+### Run
+#### 1. Set SQLALCHEMY_DATABASE_URL
+```
+export SQLALCHEMY_DATABASE_URL=mysql+pymysql://root:"[PASSWD]"@[MySQL DB IP]:3306/nmt?charset=utf8
+```
+
+#### 2. Run
+```
+$ gunicorn -k uvicorn.workers.UvicornWorker main:app
+```
+or if you want run 4 workers,
+```
+$ gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+```
+
+### Example
+<img src="https://github.com/Judy-Choi/2023-translator-back/assets/53294075/672ffd39-56f2-4ad0-8fa5-7c5badf735d1" width=700>
+
+<img src="https://github.com/Judy-Choi/2023-translator-back/assets/53294075/906a6a4a-fedd-4fd5-be50-ea1e081d38e6" width=700>
