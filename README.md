@@ -38,11 +38,11 @@ export SQLALCHEMY_DATABASE_URL=mysql+pymysql://root:"[PASSWD]"@[MySQL DB IP]:330
 
 #### 2. Run
 ```
-$ gunicorn -k uvicorn.workers.UvicornWorker main:app
+gunicorn -k uvicorn.workers.UvicornWorker main:app
 ```
 or if you want run 4 workers,
 ```
-$ gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
 ```
 
 ### Example
